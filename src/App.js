@@ -1,26 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Global, css } from '@emotion/core';
+import styled from '@emotion/styled';
+import Contact from './components/Contact/index.jsx';
+import Resume from './components/Resume/index.jsx';
+import Article from './components/Article/index.jsx';
+import About from './components/About/index.jsx';
+import Project from './components/Projects/index.jsx';
+const bodyFillColor = `#89B0AE`;
 
-function App() {
+const ContainerColumn = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+  }
+`;
+
+const ContainerRow = styled.div`
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ContainerColumn>
+        <Global
+          styles={css`
+            body {
+              background: ${bodyFillColor};
+              margin: 0;
+              padding: 0;
+            }
+          `}
+        />
+        <About />
+        <Project />
+        <ContainerRow>
+          <Article />
+          <Resume />
+          <Contact />
+        </ContainerRow>
+      </ContainerColumn>
     </div>
   );
-}
+};
 
 export default App;
