@@ -62,7 +62,7 @@ const SVGContainer = styled.div`
 export default function About() {
   return (
     <ArticleCard>
-      <h1>Hi, I am</h1>
+      <h1 css={{ lineHeight: '20px' }}>Hi, I am</h1>
       <Title>Shafiya</Title>
       <h1>Adzhani</h1>
       <p>Join me in my journey to reach great things with tech</p>

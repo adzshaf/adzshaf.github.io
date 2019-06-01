@@ -34,7 +34,7 @@ const App = () => {
             body {
               background: ${bodyFillColor};
               margin: 0;
-              padding: 0;
+              padding: 10px;
             }
           `}
         />
